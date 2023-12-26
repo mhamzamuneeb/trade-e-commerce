@@ -1,0 +1,5 @@
+.product-card {
+  &:hover .atc-btn {
+    transform: translateY(0%);
+  }
+}

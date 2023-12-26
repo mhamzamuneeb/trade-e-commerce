@@ -12,6 +12,9 @@ const nextConfig = {
     "rc-tree",
     "rc-table",
   ],
+  images: {
+    domains: ["fakestoreapi.com"],
+  },
 };
 
 module.exports = nextConfig;

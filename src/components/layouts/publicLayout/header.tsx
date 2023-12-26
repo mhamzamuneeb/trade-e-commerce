@@ -6,7 +6,7 @@ import {
   MenuOutlined,
 } from "@ant-design/icons";
 import { useState } from "react";
-export default function Header({}) {
+export default function Header({ }) {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -22,22 +22,22 @@ export default function Header({}) {
     selectedTextColor: "orange!important", // Set the text color to black
   };
 
-  const menu = (
-    <Menu mode="horizontal" defaultSelectedKeys={["1"]} style={menuStyle}>
-      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="1">
-        Home
-      </Menu.Item>
-      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="2">
-        Contact
-      </Menu.Item>
-      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="3">
-        About
-      </Menu.Item>
-      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="4">
-        Sign Up
-      </Menu.Item>
-    </Menu>
-  );
+  // const menu = (
+  //   <Menu mode="horizontal" defaultSelectedKeys={["1"]} style={menuStyle}>
+  //     <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="1">
+  //       Home
+  //     </Menu.Item>
+  //     <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="2">
+  //       Contact
+  //     </Menu.Item>
+  //     <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="3">
+  //       About
+  //     </Menu.Item>
+  //     <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="4">
+  //       Sign Up
+  //     </Menu.Item>
+  //   </Menu>
+  // );
 
   return (
     <header className="bg-white text-white p-4 grid grid-cols-3 gap-4 max-w-screen-xl mx-auto border-b">
@@ -45,7 +45,7 @@ export default function Header({}) {
         <h5 className="search-input my-4">Exclusive</h5>
       </div>
 
-      <div className="menu-container flex justify-center mx-2">{menu}</div>
+      {/* <div className="menu-container flex justify-center mx-2">{menu}</div> */}
 
       <div className="search-and-icons flex justify-self-end gap-3">
         <Input
@@ -60,7 +60,7 @@ export default function Header({}) {
         />
       </div>
 
-      <Drawer
+      {/* <Drawer
         title="Basic Drawer"
         placement="right"
         onClick={onClose}
@@ -68,7 +68,7 @@ export default function Header({}) {
         visible={visible}
       >
         {menu}
-      </Drawer>
+      </Drawer> */}
     </header>
   );
 }
