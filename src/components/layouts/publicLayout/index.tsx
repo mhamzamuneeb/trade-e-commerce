@@ -11,7 +11,7 @@ export default function PublicLayout({ children }: Props) {
     <div>
       <NavBar />
       <Header />
-      <main>{children}</main>
+      <main className="page-width">{children}</main>
       <Footer />
     </div>
   );
