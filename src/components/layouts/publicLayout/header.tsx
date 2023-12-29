@@ -19,22 +19,18 @@ export default function Header({}) {
 
   const menuStyle = {
     color: "black",
-    text: "black",
-    // Set the text color to black
+    selectedTextColor: "orange!important", // Set the text color to black
   };
 
   const menu = (
     <Menu mode="horizontal" defaultSelectedKeys={["1"]} style={menuStyle}>
-      <Menu.Item
-        className="text-black color-black px-4 py-2 hover:text-black-300"
-        key="1"
-      >
+      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="1">
         Home
       </Menu.Item>
       <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="2">
         Contact
       </Menu.Item>
-      <Menu.Item className="text-black px-4 py-2 hover:text-black-100" key="3">
+      <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="3">
         About
       </Menu.Item>
       <Menu.Item className="text-black px-4 py-2 hover:text-black-300" key="4">
@@ -44,7 +40,7 @@ export default function Header({}) {
   );
 
   return (
-    <header className="bg-blue text-white p-4 grid grid-cols-3 gap-4 max-w-screen-xl mx-auto">
+    <header className="bg-white text-white p-4 grid grid-cols-3 gap-4 max-w-screen-xl mx-auto border-b">
       <div className="logo text-black font-bold flex justify-self-start">
         <h5 className="search-input my-4">Exclusive</h5>
       </div>
