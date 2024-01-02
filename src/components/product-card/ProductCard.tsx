@@ -62,7 +62,7 @@ const ProductCard = (props) => {
           <span></span>
         </h6>
         <div className="flex items-center">
-          {/* <RatingComponent /> */}
+          <RatingComponent />
 
           <span className="text-color-fade ml-2">({rating.count})</span>
         </div>
