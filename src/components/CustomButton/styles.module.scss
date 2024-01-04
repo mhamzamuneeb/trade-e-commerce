@@ -1,0 +1,18 @@
+.custom {
+
+    &-primary {
+        @apply text-white border-primary bg-primary #{!important};
+
+        &:hover {
+            @apply text-primary bg-white #{!important}
+        }
+    }
+
+    &-secondary {
+        @apply text-white border-secondary bg-secondary #{!important};
+
+        &:hover {
+            @apply text-secondary bg-white #{!important}
+        }
+    }
+}

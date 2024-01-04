@@ -2,6 +2,16 @@
 @import "font";
 @import "custom";
 
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+}
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   box-sizing: border-box;
@@ -135,7 +145,7 @@ p {
 .page-width {
   max-width: 1300px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 4.5rem;
 }
 
 .text-color-primary {
