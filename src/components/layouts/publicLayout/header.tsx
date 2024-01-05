@@ -4,10 +4,18 @@ import {
   HeartOutlined,
   ShoppingOutlined,
 } from "@ant-design/icons";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 
 const HeaderComponent = () => {
+  const [cartCount, setCartCount] = useState();
+  useEffect(() => {
+    fetch("https://fakestoreapi.com/carts")
+      .then((res) => res.json())
+      .then((json) => {
+        console.log(json), setCartCount(json.length);
+      });
+  }, []);
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {

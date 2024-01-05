@@ -3,6 +3,7 @@ import { SideMenu } from "@/components/sideMenu/SideMenu";
 import React, { useState } from "react";
 import BottomComponent from "../bottom";
 import ProductList from "@/components/productList/productList";
+import { HeroImage } from "../HeroImage";
 import MyCarousel from "@/components/featured-collection/carousel";
 
 const Homepage = () => {
@@ -13,7 +14,11 @@ const Homepage = () => {
   };
   return (
     <div>
-      <SideMenu sharedData={sharedData} updateData={updateData} />
+      <div className="flex flex-wrap">
+        <SideMenu sharedData={sharedData} updateData={updateData} />
+        <HeroImage />
+        {/* <MyCarousel /> */}
+      </div>
       <FeaturedCollection sharedData={sharedData} />
       <ProductList />
       <BottomComponent />

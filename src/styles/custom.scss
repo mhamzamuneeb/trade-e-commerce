@@ -9,6 +9,7 @@
   & > span {
     padding: 5px 10px;
     display: block;
+    text-transform: capitalize;
   }
   & > span:hover {
     background-color: rgb(245, 245, 245);
@@ -25,8 +26,7 @@
   }
 }
 .level-1-menu {
-  width: 200px;
-  border: 1px solid black;
+  width: 100%;
   overflow: hidden;
   position: relative;
   min-height: 250px;
