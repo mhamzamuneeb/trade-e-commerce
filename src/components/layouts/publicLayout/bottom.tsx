@@ -263,10 +263,10 @@ export default function BottomComponent() {
                 <div className=" flex grow flex-col max-md:mt-10 items-center">
                   <BottomIcon3 />
 
-                  <div className="text-black text-xl font-semibold leading-7 whitespace-nowrap  mt-6  items-center">
+                  <div className="text-black text-xl font-semibold leading-7   mt-6  md:items-center items-center text-center">
                     MONEY BACK GUARANTEE
                   </div>
-                  <div className="text-black text-sm leading-5 self-center whitespace-nowrap  mt-2">
+                  <div className="text-black text-sm leading-5 self-center  text-center  mt-2">
                     We reurn money within 30 days
                   </div>
                 </div>

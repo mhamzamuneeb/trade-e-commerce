@@ -2,6 +2,8 @@ import FeaturedCollection from "@/components/featured-collection/FeaturedCollect
 import { SideMenu } from "@/components/sideMenu/SideMenu";
 import React, { useState } from "react";
 import BottomComponent from "../bottom";
+import ProductList from "@/components/productList/productList";
+import MyCarousel from "@/components/featured-collection/carousel";
 
 const Homepage = () => {
   const [sharedData, setSharedData] = useState("");
@@ -13,6 +15,7 @@ const Homepage = () => {
     <div>
       <SideMenu sharedData={sharedData} updateData={updateData} />
       <FeaturedCollection sharedData={sharedData} />
+      <ProductList />
       <BottomComponent />
     </div>
   );

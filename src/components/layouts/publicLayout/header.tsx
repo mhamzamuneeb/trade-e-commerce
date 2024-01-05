@@ -1,12 +1,13 @@
-import { Layout, Menu, Input, Button, Drawer } from "antd";
+import { Menu, Drawer, Button, Input } from "antd";
 import {
   SearchOutlined,
   HeartOutlined,
   ShoppingOutlined,
-  MenuOutlined,
 } from "@ant-design/icons";
-import { useState } from "react";
-export default function Header({ }) {
+import React, { useState } from "react";
+import { MenuOutlined } from "@ant-design/icons";
+
+const HeaderComponent = () => {
   const [visible, setVisible] = useState(false);
 
   const showDrawer = () => {
@@ -40,12 +41,48 @@ export default function Header({ }) {
   );
 
   return (
-    <header className="bg-white text-white p-4 grid grid-cols-3 gap-4 max-w-screen-xl mx-auto border-b">
-      <div className="logo text-black font-bold flex justify-self-start">
-        <h5 className="search-input my-4">Exclusive</h5>
+    // <header className="bg-white p-4 flex justify-between items-center border-b">
+    //   <div className="flex items-center space-x-4">
+    //     <Button className="md:hidden" onClick={showDrawer}>
+    //       {/* Here you might want to add a hamburger icon */}
+    //     </Button>
+    //     <h5 className="font-bold">Exclusive</h5>
+    //   </div>
+
+    //   {menu}
+
+    //   <div className="flex space-x-2">
+    //     <Input
+    //       className="hidden md:block"
+    //       placeholder="What are you looking for?"
+    //       prefix={<SearchOutlined />}
+    //     />
+    //     <Button icon={<HeartOutlined />} />
+    //     <Button icon={<ShoppingOutlined />} />
+    //   </div>
+
+    //   <Drawer
+    //     title="Basic Drawer"
+    //     placement="right"
+    //     onClose={onClose}
+    //     visible={visible}
+    //   >
+    //     {menu}
+    //   </Drawer>
+    // </header>
+    <header className="bg-white text-white p-4 md:grid lg:grid grid-cols-3 gap-4 max-w-screen-xl mx-auto border-b">
+      <div className="flex items-center space-x-4   ">
+        <div className="  sm:block lg:hidden md:hidden ">
+          <Button className="  " onClick={showDrawer}>
+            <MenuOutlined /> {/* Here you might want to add a hamburger icon */}
+          </Button>
+        </div>
+        <h5 className="font-bold text-black">Exclusive</h5>
       </div>
 
-      <div className="menu-container flex justify-center mx-2">{menu}</div>
+      <div className="menu-container flex justify-center mx-2 hidden  md:block lg:block">
+        {menu}
+      </div>
 
       <div className="search-and-icons flex justify-self-end gap-3">
         <Input
@@ -69,6 +106,8 @@ export default function Header({ }) {
       >
         {menu}
       </Drawer>
-    </header >
+    </header>
   );
-}
+};
+
+export default HeaderComponent;

@@ -72,8 +72,8 @@ const FeaturedCollection = ({ sharedData }) => {
     <div className="section">
       <div className="flex items-center">
         <h2>Flash Sales</h2>
-        <div className="ml-48">Timer</div>
-        <div className="carousel-arrows ml-auto flex items-center justify-center gap-10">
+        {/* <div className="ml-auto">Timer</div> */}
+        <div className="carousel-arrows ml-auto flex items-center justify-center gap-2">
           <div
             onClick={goPrev}
             className="cursor-pointer"
