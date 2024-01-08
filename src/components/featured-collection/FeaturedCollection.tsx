@@ -3,8 +3,14 @@ import ProductCard from "../product-card/ProductCard";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 
-const FeaturedCollection = ({ sharedData }) => {
-  const collectionRef = useRef(null);
+interface FeaturedCollectionProps {
+  sharedData: any; // Assuming sharedData is of type string, you can adjust it based on your actual data type
+}
+
+const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
+  sharedData,
+}) => {
+  const collectionRef = useRef<HTMLDivElement | null>(null); // Specify the type for collectionRef
   const [data, setData] = useState([]);
   useEffect(() => {
     if (sharedData) {
