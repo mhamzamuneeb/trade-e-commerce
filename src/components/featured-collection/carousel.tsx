@@ -1,6 +1,5 @@
 import React from "react";
 import { Carousel } from "antd";
-import { CarouselImage, FacebookIcon } from "@/assets/icons/icons";
 
 export default function MyCarousel() {
   const contentStyle = {
