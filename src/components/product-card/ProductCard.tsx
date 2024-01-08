@@ -1,5 +1,8 @@
 import { StartEmptySvg, StartFillSvg } from "@/assets/icons/icons";
 import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import ProductRating from "../ProductRating";
 // import "@/components/product-card/style.scss";
 
 // import "./style.scss";
@@ -17,26 +20,23 @@ import Image from "next/image";
 // }
 const ProductCard = (props) => {
   const { id, title, price, description, category, image, rating } = props.data;
+  const navigate = useRouter();
 
-  const RatingComponent = () => {
-    return (
-      <div className="flex items-center">
-        {Array.from({ length: Math.ceil(rating?.rate) }, (_, index) => (
-          <StartFillSvg key={index} />
-        ))}
-        {Array.from({ length: 5 - Math.ceil(rating?.rate) }, (_, index) => (
-          <StartEmptySvg key={index} />
-        ))}
-      </div>
-    );
+  const onClickProductCard = (event) => {
+    event.preventDefault();
+    navigate.push(`/product/${id}`);
   };
   return (
-    <div className="product-card basis-1/4 p-3" product-id={id}>
+    <div
+      className="product-card basis-1/4 p-3 cursor-pointer"
+      product-id={id}
+      onClick={onClickProductCard}
+    >
       <div
         className="overflow-hidden rounded-lg"
         style={{ backgroundColor: "#F5F5F5" }}
       >
-        <a href="image">
+        <div>
           <Image
             style={{ height: "250px" }}
             className="object-contain w-full"
@@ -46,12 +46,12 @@ const ProductCard = (props) => {
             height={250}
             priority
           />
-        </a>
+        </div>
         <button className="p-2 transition-transform	 atc-btn translate-y-full bg-black text-white w-full">
           Add to Cart
         </button>
       </div>
-      <a href="image">
+      <div>
         <h6>{title}</h6>
         <h6>
           <span className="text-color-secondary">${price}</span>{" "}
@@ -62,11 +62,11 @@ const ProductCard = (props) => {
           <span></span>
         </h6>
         <div className="flex items-center">
-          <RatingComponent />
+          <ProductRating rating={rating} />
 
           <span className="text-color-fade ml-2">({rating.count})</span>
         </div>
-      </a>
+      </div>
     </div>
   );
 };

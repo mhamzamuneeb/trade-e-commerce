@@ -1,0 +1,21 @@
+.ant-radio-button-wrapper-checked {
+  background-color: #27874e !important; /* Checked */
+  color: #fff !important;
+}
+
+.ant-radio-button-wrapper-checked:hover {
+  background-color: #35a770 !important; /* Hover */
+}
+
+.ant-radio-button-wrapper-checked:active {
+  background-color: #2f8f63 !important; /* Active */
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp).ant-radio-wrapper
+  .ant-radio-checked::after {
+  background-color: #2f8f63 !important; /* Active */
+}
+
+body {
+  background-color: red;
+}
