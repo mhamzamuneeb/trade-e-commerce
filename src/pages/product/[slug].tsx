@@ -46,9 +46,9 @@ export default function ProductDetail({}) {
       <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
         <div className=" space-y-3 ">
           {Array.from({ length: 4 }, (_, index) => (
-            <div className=" bg-gray-100 w-[120px] p-4">
+            <div className=" bg-gray-100 w-[120px] p-4" key={data.id + index}>
               <Image
-                key={(index + 1).toString()}
+                key={`${data.id}-${(index + 1).toString()}`}
                 src={data?.image}
                 className="h-auto m-auto w-full max-h-[80px] object-contain "
                 alt=""
@@ -60,6 +60,7 @@ export default function ProductDetail({}) {
         </div>
         <div className="bg-gray-100 w-full">
           <Image
+            key={`${data.id}-main`}
             src={data?.image}
             alt=""
             width={100}
