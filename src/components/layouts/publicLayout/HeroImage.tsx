@@ -11,7 +11,7 @@ export const HeroImage = () => {
                 <div className="text-green-500 text-base font-semibold leading-5 self-stretch max-md:max-w-full">
                   Categories
                 </div>
-                <div className="text-neutral-50 text-5xl font-semibold leading-[60px] tracking-widest self-stretch mt-11 max-md:max-w-full max-md:text-4xl max-md:leading-[56px] max-md:mt-10">
+                <div className="text-neutral-50 text-3xl font-semibold leading-[40px] tracking-widest self-stretch mt-11 max-md:max-w-full max-md:text-4xl max-md:leading-[56px] max-md:mt-10">
                   Enhance Your Music Experience
                 </div>
                 <div className="items-stretch self-stretch flex justify-between gap-5 mt-9 pr-20 max-md:max-w-full max-md:flex-wrap max-md:pr-5">

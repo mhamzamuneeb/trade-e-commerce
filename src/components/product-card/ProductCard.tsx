@@ -19,7 +19,8 @@ import ProductRating from "../ProductRating";
 //   };
 // }
 const ProductCard = (props) => {
-  const { id, title, price, description, category, image, rating } = props.data;
+  const { id, title, price, description, category, image, rating } =
+    props?.data;
   const navigate = useRouter();
 
   const onClickProductCard = (event) => {
@@ -64,7 +65,7 @@ const ProductCard = (props) => {
         <div className="flex items-center">
           <ProductRating rating={rating} />
 
-          <span className="text-color-fade ml-2">({rating.count})</span>
+          <span className="text-color-fade ml-2">({rating?.count})</span>
         </div>
       </div>
     </div>
