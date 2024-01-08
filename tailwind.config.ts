@@ -4,14 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#0088FF",
+        primary: "#DB4444",
         "primary-light": "#E3F2FF",
         secondary: "#50AE31",
         "secondary-light": "#E6F4E2",
+        defaults: "#FFFFFF",
         tertiary: "#F9B80A",
         error: "#E30613",
         layout: "#F8F8F8",
       },
+
       // borderRadius: {
       //   layout: ".75rem",
       // },

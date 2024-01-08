@@ -12,14 +12,14 @@ interface Props {
   buttonColor?: string;
   icon?: "Print" | "Share" | "Plus" | "Export";
   btnSize?: BaseButtonProps["size"];
-  btnType?: "primary" | "secondary";
+  btnType?: "primary" | "secondary" | "defaults";
 }
 
 const CustomButton = ({
   btnText = `Save`,
   handleSubmit,
   disabled = false,
-  className = ``,
+  className = "w-32",
   btnType = "secondary",
   icon = undefined,
   btnSize = "middle",
@@ -37,10 +37,13 @@ const CustomButton = ({
   //   ].includes(window.location.pathname);
   //   const defaultClass = authPages ? `w-3/4 h-10` : `h-[2.3rem] min-w-fit w-32`;
 
+  const backgroundColor = btnType === "primary" ? "bg-primary" : "bg-defaults";
+  const textColor = btnType === "primary" ? "text-white" : "text-black";
+
   return (
     <Button
       type={"primary"}
-      className={`  h-[2.3rem] min-w-fit w-32 ${
+      className={`  h-[2.3rem] min-w-fit ${className} ${
         disabled ? `!text-[darkGray]` : styles[`custom-${btnType}`]
       }   `}
       onClick={handleSubmit}

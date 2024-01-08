@@ -1,9 +1,11 @@
 import CustomButton from "@/components/CustomButton";
 import ProductRating from "@/components/ProductRating";
+import { HeartOutlined } from "@ant-design/icons";
 import { Button, Input, Radio, RadioChangeEvent, Space } from "antd";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
+import styles from "./styles.module.css";
 
 export default function ProductDetail({}) {
   const router = useRouter();
@@ -25,6 +27,20 @@ export default function ProductDetail({}) {
     console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
+  const [activeSize, setActiveSize] = useState("XS");
+
+  const handleSizeClick = (size: any) => {
+    setActiveSize(size);
+  };
+
+  const customButtons = [
+    { text: "XS", className: "w-0.5" },
+    { text: "S", className: "w-0.5 mx-1.5" },
+    { text: "M", className: "w-0.5" },
+    { text: "L", className: "w-0.5 mx-1.5" },
+    { text: "XL", className: "w-0.5" },
+  ];
+
   return (
     <div className=" flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
       <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
@@ -60,28 +76,83 @@ export default function ProductDetail({}) {
 
         <div className="mt-6">
           Colors{" "}
-          <Radio.Group onChange={onChange} value={value}>
+          <Radio.Group
+            onChange={onChange}
+            value={value}
+            className="primary ant-radio-button-wrapper-checked"
+          >
             <Radio value={1}>A</Radio>
             <Radio value={2}>B</Radio>
           </Radio.Group>
         </div>
 
         <div className="my-4">
-          Sizes <CustomButton btnText="XS" handleSubmit={undefined} />
-          <Button>S</Button>
-          <Button>M</Button>
-          <Button>L</Button> <Button>XL</Button>
+          Sizes{" "}
+          {customButtons.map((button, index) => (
+            <CustomButton
+              key={index}
+              btnType={activeSize === button.text ? "primary" : "defaults"}
+              className={button.className}
+              btnText={button.text}
+              handleSubmit={() => handleSizeClick(button.text)}
+            />
+          ))}
+          {/* <CustomButton
+            btnType="primary"
+            className="w-0.5"
+            btnText="XS"
+            handleSubmit={undefined}
+          />
+          <CustomButton
+            btnType="primary"
+            className="w-0.5 mx-1.5"
+            btnText="S"
+            handleSubmit={undefined}
+          />
+          <CustomButton
+            btnType="primary"
+            className="w-0.5"
+            btnText="M"
+            handleSubmit={undefined}
+          />
+          <CustomButton
+            btnType="primary"
+            className="w-0.5 mx-1.5"
+            btnText="L"
+            handleSubmit={undefined}
+          />
+          <CustomButton
+            btnType="primary"
+            className="w-0.5"
+            btnText="Xl"
+            handleSubmit={undefined}
+          /> */}
         </div>
 
         <div>
           {" "}
           <Space.Compact>
-            <Button type="primary">+</Button>
+            <CustomButton
+              btnType="primary"
+              btnText="+"
+              handleSubmit={undefined}
+              className="w-2"
+            />
             <Input defaultValue="2" rootClassName="!w-16 text-center" />
-            <Button type="primary">-</Button>
+            <CustomButton
+              btnType="primary"
+              btnText="-"
+              handleSubmit={undefined}
+              className="w-2 "
+            />
           </Space.Compact>
-          <Button type="primary">Buy Now</Button>
-          <Button type="primary">-</Button>
+          <CustomButton
+            btnType="primary"
+            btnText="Buy Now"
+            handleSubmit={undefined}
+            className="w-3 mx-4"
+          />
+          <Button className="" type="default" icon={<HeartOutlined />} />
         </div>
       </div>
     </div>
