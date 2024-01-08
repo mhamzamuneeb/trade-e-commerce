@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
 
 const FeaturedCollection = ({ sharedData }) => {
+  const collectionRef = useRef(null);
   const [data, setData] = useState([]);
   useEffect(() => {
     if (sharedData) {
@@ -17,6 +18,8 @@ const FeaturedCollection = ({ sharedData }) => {
         });
     }
     // Cleanup function (optional)
+    collectionRef.current?.scrollIntoView({ behavior: "smooth" });
+
     return () => {
       console.log("Component will unmount (cleanup)");
       // Perform cleanup (unsubscribe, clear intervals, etc.)
@@ -57,6 +60,14 @@ const FeaturedCollection = ({ sharedData }) => {
     // centerMode: true,
     autoplay: true,
     draggable: true,
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+    ],
   };
   const carouselArrowStyling = {
     width: "25px",
@@ -69,7 +80,7 @@ const FeaturedCollection = ({ sharedData }) => {
     padding: "20px",
   };
   return (
-    <div className="section">
+    <div className="section" ref={collectionRef}>
       <div className="flex items-center">
         <h2>Flash Sales</h2>
         {/* <div className="ml-auto">Timer</div> */}

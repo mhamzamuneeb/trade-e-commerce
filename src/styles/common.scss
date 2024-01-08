@@ -204,3 +204,11 @@ p {
 .ant-radio-wrapper .ant-radio-checked::after {
   border-color: #c32323;
 }
+@media not all and (min-width: 768px) {
+  .section {
+    padding-block: 15px;
+  }
+  .page-width {
+    padding-inline: 1.5rem;
+  }
+}
