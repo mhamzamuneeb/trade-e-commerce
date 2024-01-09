@@ -1,0 +1,214 @@
+@import "_variable";
+@import "font";
+@import "custom";
+
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  * {
+    @apply box-border;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 48px;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+h3 {
+  font-size: 32px;
+}
+
+h4 {
+  font-size: 24px;
+}
+
+h5 {
+  font-size: 20px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+.ant-menu-horizontal > .ant-menu-item-active {
+  color: black;
+  /* Set the text color for the selected item */
+  background-color: #f0f0f0;
+  /* Set the background color for the selected item */
+  /* Add any other styles as needed */
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-item-selected,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-submenu-selected,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-submenu-selected {
+  color: black;
+  background-color: white;
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-item-selected::after,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-item-selected::after,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light.ant-menu-horizontal
+  > .ant-menu-submenu-selected::after,
+:where(.css-dev-only-do-not-override-y8x9xp).ant-menu-light
+  > .ant-menu.ant-menu-horizontal
+  > .ant-menu-submenu-selected::after {
+  color: black !important;
+  background-color: black !important;
+  border-bottom-color: black;
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp)[class^="ant-menu"]
+  [class^="ant-menu"]::before,
+:where(.css-dev-only-do-not-override-y8x9xp)[class*=" ant-menu"]
+  [class^="ant-menu"]::before,
+:where(.css-dev-only-do-not-override-y8x9xp)[class^="ant-menu"]
+  [class*=" ant-menu"]::before,
+:where(.css-dev-only-do-not-override-y8x9xp)[class*=" ant-menu"]
+  [class*=" ant-menu"]::before,
+:where(.css-dev-only-do-not-override-y8x9xp)[class^="ant-menu"]
+  [class^="ant-menu"]::after,
+:where(.css-dev-only-do-not-override-y8x9xp)[class*=" ant-menu"]
+  [class^="ant-menu"]::after,
+:where(.css-dev-only-do-not-override-y8x9xp)[class^="ant-menu"]
+  [class*=" ant-menu"]::after,
+:where(.css-dev-only-do-not-override-y8x9xp)[class*=" ant-menu"]
+  [class*=" ant-menu"]::after {
+  color: black;
+}
+
+.custom-dots .slick-dots li button {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.custom-dots .slick-dots li.slick-active button {
+  background: #fff;
+}
+
+.custom-dots .slick-dots {
+  bottom: -25px;
+  /* Adjust the position of dots */
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp).ant-carousel
+  .slick-dots
+  li
+  button {
+  border-radius: 50%;
+  /* Make the button circular */
+  width: 10px;
+  /* Set the width to control the size of the button */
+  height: 10px;
+  /* Set the height to control the size of the button */
+  background: #c32323;
+  /* Red background color */
+  border: 2px solid #fff;
+  // position: relative;
+  // display: block;
+  // width: 17%;
+  // height: 3px;
+  // padding: 0;
+  // color: transparent;
+  // font-size: 0;
+  // background: #ffffff;
+  // border: 0;
+  // border-radius: 3px;
+  // outline: none;
+  // cursor: pointer;
+  // opacity: 0.3;
+  // transition: all 0.3s;
+}
+
+:where(.css-dev-only-do-not-override-y8x9xp).ant-carousel
+  .slick-dots
+  li.slick-active
+  button {
+  background: #c32323;
+  opacity: 1;
+}
+
+.carousel {
+  // width: 400px;
+  margin-right: "100px";
+  margin-left: "400px";
+}
+
+.page-width {
+  max-width: 1300px;
+  margin-inline: auto;
+  padding-inline: 4.5rem;
+}
+
+.text-color-primary {
+  color: $primary-color;
+}
+
+.text-color-secondary {
+  color: $secondary-color;
+}
+
+.text-color-fade {
+  color: $fade-color;
+}
+
+.section {
+  padding-block: 25px;
+}
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: #c32323 !important; /* Active */
+}
+
+.ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: #c32323;
+}
+// not working below
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  border-color: #c32323;
+}
+.ant-radio-wrapper .ant-radio-checked::after {
+  border-color: #c32323;
+}
+@media not all and (min-width: 768px) {
+  .section {
+    padding-block: 15px;
+  }
+  .page-width {
+    padding-inline: 1.5rem;
+  }
+}

@@ -1,0 +1,51 @@
+.product-card {
+  &:hover .atc-btn {
+    transform: translateY(0%);
+  }
+}
+.horizontal-slide-menu li {
+  cursor: pointer;
+  width: 100%;
+  & > span {
+    padding: 5px 10px;
+    display: block;
+    text-transform: capitalize;
+  }
+  & > span:hover {
+    background-color: rgb(245, 245, 245);
+  }
+}
+.menu-item:not(.hasChildren) span {
+  width: 100%;
+  display: inline-block;
+}
+.menu-item.hasChildren {
+  display: flex;
+  & > span:first-child {
+    width: 100%;
+  }
+}
+.level-1-menu {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  min-height: 250px;
+}
+.subMenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 100%;
+  background: white;
+  z-index: 2;
+  transition: 0.4s ease-in;
+}
+.level-2-menu {
+}
+.level-3-menu {
+}
+
+.noTranslate {
+  left: 0px;
+}
