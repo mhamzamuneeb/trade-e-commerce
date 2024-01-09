@@ -1,0 +1,38 @@
+version: '3'
+services:
+  nextjs: 
+    build: ./
+  nginx: 
+    build: ./nginx
+    ports:
+      - 80:80
+
+
+
+# version: '3.7'
+# services:
+#   nextjs:
+#     # container_name: nextjs
+#     image: node:18.15.0-alpine
+#     ports:
+#       - "3000"
+#     volumes:
+#       - ./nextjs:/app/nextjs
+#       - ./nginx/logs/nextjs/npm:/root/.npm/_logs
+#     working_dir: /app/nextjs
+#     command: >
+#       /bin/sh -c "npm install -f&&
+#         npm run build &&
+#         npm run start"
+#   nginx:
+#     # container_name: nginx
+#     image: nginx:1.15.8-alpine
+#     ports:
+#       - '80:80'
+#       - '443:443'
+#     volumes:
+#       - ./nginx/conf:/etc/nginx/conf.d
+#       - ./nginx/logs/nginx:/var/log/nginx
+#     links:
+#       - nextjs
+#     restart: always

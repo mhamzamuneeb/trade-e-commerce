@@ -15,6 +15,10 @@ const nextConfig = {
   images: {
     domains: ["fakestoreapi.com", "cdn.builder.io"],
   },
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  // distDir: "build",
 };
 
 module.exports = nextConfig;

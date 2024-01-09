@@ -50,7 +50,7 @@ const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
   }, []);
 
   const goNext = () => {
-    ref?.current.next();
+    ref?.current?.next();
   };
   const goPrev = () => {
     ref?.current.prev();
