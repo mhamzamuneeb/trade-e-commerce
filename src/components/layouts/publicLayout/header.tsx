@@ -33,7 +33,7 @@ const HeaderComponent = () => {
   };
   const navigate = useRouter();
 
-  const goToCart = (event) => {
+  const goToCart = (event: any) => {
     event.preventDefault();
 
     navigate.push(`/cart`);

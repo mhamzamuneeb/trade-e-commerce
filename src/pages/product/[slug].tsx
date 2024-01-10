@@ -45,22 +45,27 @@ export default function ProductDetail({}) {
     <div className=" flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
       <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
         <div className=" space-y-3 ">
-          {Array.from({ length: 4 }, (_, index) => (
-            <div className=" bg-gray-100 w-[120px] p-4" key={data?.id + index}>
-              <Image
-                key={`${data?.id}-${(index + 1).toString()}`}
-                src={data?.image}
-                className="h-auto m-auto w-full max-h-[80px] object-contain "
-                alt=""
-                width={100}
-                height={100}
-              />
-            </div>
-          ))}
+          {data &&
+            Array.from({ length: 4 }, (_, index) => (
+              <div
+                className=" bg-gray-100 w-[120px] p-4"
+                key={index}
+                data-index={index}
+              >
+                <Image
+                  key={(index + 1).toString()}
+                  src={data?.image}
+                  className="h-auto m-auto w-full max-h-[80px] object-contain "
+                  alt=""
+                  width={100}
+                  height={100}
+                />
+              </div>
+            ))}
         </div>
         <div className="bg-gray-100 w-full">
           <Image
-            key={`${data?.id}-main`}
+            key={"main"}
             src={data?.image}
             alt=""
             width={100}
