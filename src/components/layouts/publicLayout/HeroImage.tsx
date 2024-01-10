@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 export const HeroImage = () => {
   return (
@@ -42,11 +43,16 @@ export const HeroImage = () => {
               </div>
             </div>
             <div className="flex flex-col items-stretch w-[56%] ml-5 max-md:w-full max-md:ml-0">
-              {/* <radioImage /> */}
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+              <Image
                 className="aspect-[1.72] object-contain object-center w-full overflow-hidden my-auto max-md:max-w-full max-md:mt-10"
+                src={
+                  "https://cdn.builder.io/api/v1/image/assets/TEMP/f314cd38b1c12bb72dc5e215c111efb82a4eadda2226727d2e209ce4ab9bc683?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+                }
+                alt=""
+                width={250}
+                height={250}
+                priority
+                layout="responsive"
               />
             </div>
           </div>

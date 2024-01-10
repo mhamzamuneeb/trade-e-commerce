@@ -1,19 +1,25 @@
 import React from "react";
 import { Carousel } from "antd";
-import { CarouselImage, FacebookIcon } from "@/assets/icons/icons";
 
 export default function MyCarousel() {
+  type TextAlign =
+    | "left"
+    | "right"
+    | "center"
+    | "justify"
+    | "initial"
+    | "inherit";
+
   const contentStyle = {
     marginRight: "100px",
     marginLeft: "400px",
-
     height: "250px",
     color: "#fff",
     lineHeight: "160px",
-    textAlign: "center",
+    textAlign: "center" as TextAlign, // Use Typography.TextAlign type
     background: "#364d79",
   };
-  const onChange = (currentSlide: any) => {
+  const onChange = (currentSlide: number) => {
     console.log(currentSlide);
   };
   const settings = {

@@ -189,6 +189,21 @@ p {
 .section {
   padding-block: 25px;
 }
+
+.ant-radio-wrapper .ant-radio-checked .ant-radio-inner {
+  background-color: #c32323 !important; /* Active */
+}
+
+.ant-radio-wrapper:hover .ant-radio-inner {
+  border-color: #c32323;
+}
+// not working below
+.ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled) {
+  border-color: #c32323;
+}
+.ant-radio-wrapper .ant-radio-checked::after {
+  border-color: #c32323;
+}
 @media not all and (min-width: 768px) {
   .section {
     padding-block: 15px;

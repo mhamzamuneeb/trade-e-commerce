@@ -2,10 +2,29 @@ import { Carousel } from "antd";
 import ProductCard from "../product-card/ProductCard";
 import { useEffect, useRef, useState } from "react";
 import { ArrowRightOutlined, ArrowLeftOutlined } from "@ant-design/icons";
+import { CarouselRef } from "antd/es/carousel";
 
-const FeaturedCollection = ({ sharedData }) => {
-  const collectionRef = useRef(null);
-  const [data, setData] = useState([]);
+interface FeaturedCollectionProps {
+  sharedData: any; // Assuming sharedData is of type string, you can adjust it based on your actual data type
+}
+
+interface Product {
+  id: number;
+  title: string;
+  price: number;
+  description: string;
+  category: string;
+  image: string;
+  rating: {
+    rate: number;
+    count: number;
+  };
+}
+const FeaturedCollection: React.FC<FeaturedCollectionProps> = ({
+  sharedData,
+}) => {
+  const collectionRef = useRef<HTMLDivElement | null>(null); // Specify the type for collectionRef
+  const [data, setData] = useState<Product[]>([]);
   useEffect(() => {
     if (sharedData) {
       console.log("Data change");
@@ -43,13 +62,13 @@ const FeaturedCollection = ({ sharedData }) => {
     };
   }, []);
 
+  const ref = useRef<CarouselRef>(null);
   const goNext = () => {
-    ref?.current.next();
+    ref.current?.next();
   };
   const goPrev = () => {
-    ref?.current.prev();
+    ref.current?.prev();
   };
-  const ref = useRef();
   const settings = {
     dots: false,
     infinite: true,
@@ -106,7 +125,7 @@ const FeaturedCollection = ({ sharedData }) => {
         {data?.length != 0 && (
           <Carousel ref={ref} {...settings}>
             {data.map((product, index) => (
-              <ProductCard data={product} key={product.id} />
+              <ProductCard data={product} key={product?.id} />
             ))}
           </Carousel>
         )}

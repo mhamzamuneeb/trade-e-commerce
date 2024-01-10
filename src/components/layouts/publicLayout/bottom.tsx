@@ -5,6 +5,7 @@ import {
   BottomIcon3,
   radioImage,
 } from "@/assets/icons/icons";
+import Image from "next/image";
 
 export default function BottomComponent() {
   return (
@@ -25,10 +26,16 @@ export default function BottomComponent() {
               <div className="flex flex-col items-stretch w-6/12 max-md:w-full max-md:ml-0">
                 <div className="rounded bg-black flex grow flex-col items-stretch w-full mr-0 -ml-0.5 pl-8 pr-14 pt-12 max-md:max-w-full max-md:mt-8 max-md:px-5">
                   <div className="flex-col overflow-hidden relative flex min-h-[511px] mt-10 pr-20 pt-12 pb-8 items-start max-md:max-w-full max-md:pr-5">
-                    <img
-                      loading="lazy"
-                      srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+                    <Image
                       className="absolute h-full w-full object-cover object-center inset-0"
+                      src={
+                        "https://cdn.builder.io/api/v1/image/assets/TEMP/6c62c9685713c5f1bf462510ff165f34baaca0d79fed3beaeab9b227037adcaf?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+                      }
+                      alt=""
+                      width={250}
+                      height={250}
+                      priority
+                      layout="responsive"
                     />
                     <div className="relative text-neutral-50 text-2xl font-semibold leading-6 tracking-wider mt-80 max-md:mt-10">
                       PlayStation 5

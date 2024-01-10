@@ -1,7 +1,10 @@
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@ant-design/icons";
 import { useState } from "react";
 
-export const SideMenu = ({ sharedData, updateData }) => {
+interface newData {
+  sharedData: any; // Assuming sharedData is of type string, you can adjust it based on your actual data type
+}
+export const SideMenu = ({ updateData }: any) => {
   const menu = [
     { title: "electronics", value: "electronics" },
     {
@@ -46,7 +49,7 @@ export const SideMenu = ({ sharedData, updateData }) => {
 
   const [openMenus, setOpenMenus] = useState([]);
 
-  const showMenu = (index) => {
+  const showMenu = (index: any) => {
     setOpenMenus((prevOpenMenus) => [...prevOpenMenus, index]);
   };
 

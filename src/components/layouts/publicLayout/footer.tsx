@@ -7,6 +7,7 @@ import {
   LinkdinIcon,
   TwitterIcon,
 } from "@/assets/icons/icons";
+import Image from "next/image";
 // import { MessageTextIcon } from "@/assets/icons/icons";
 
 export default function Footer() {
@@ -81,21 +82,39 @@ export default function Footer() {
           <span className="mb-2">Save $3 with App New User Only</span>
           {/* <Button icon={<QrcodeOutlined />} className="mb-2" /> */}
           <div className="items-center flex justify-between gap-2 mt-2">
-            <img
-              loading="lazy"
-              srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
-              className="aspect-square object-contain object-center w-20 justify-center items-center overflow-hidden shrink-0 max-w-full my-auto"
+            <Image
+              className="aspect-square object-contain object-center !w-28 justify-center items-center overflow-hidden shrink-0 max-w-full my-auto"
+              src={
+                "https://cdn.builder.io/api/v1/image/assets/TEMP/eea58754d717cfcc9af195e6cb2ee0d2841c30fecd62d9cef8132dc530d1448d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+              }
+              alt=""
+              width={250}
+              height={250}
+              priority
+              layout="responsive"
             />
             <div className="items-center self-stretch flex grow basis-[0%] flex-col">
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+              <Image
                 className="aspect-[2.75] object-contain object-center w-[110px] overflow-hidden"
+                src={
+                  "https://cdn.builder.io/api/v1/image/assets/TEMP/f5a0011e5a16669b37837b7d57675eb91b8099c37f37be9c4d12e698e193d49d?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+                }
+                alt=""
+                width={250}
+                height={250}
+                priority
+                layout="responsive"
               />
-              <img
-                loading="lazy"
-                srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+              <Image
                 className="aspect-[2.75] object-contain object-center w-[110px] justify-center items-center overflow-hidden mt-1"
+                src={
+                  "https://cdn.builder.io/api/v1/image/assets/TEMP/e815fcb4af82376341f7e3002c89152cb3b9e6d29e4d0efcb4e01999aa39bcc1?apiKey=db92e6ea93ef4ab0aac0dabfe1ea0ff5&"
+                }
+                alt=""
+                width={250}
+                height={250}
+                priority
+                layout="responsive"
               />
             </div>
           </div>

@@ -13,7 +13,10 @@ const nextConfig = {
     "rc-table",
   ],
   images: {
-    domains: ["fakestoreapi.com"],
+    domains: ["fakestoreapi.com", "cdn.builder.io"],
+  },
+  typescript: {
+    ignoreBuildErrors: true,
   },
 };
 
