@@ -22,10 +22,10 @@ const ProductCard = (props) => {
   const { id, title, price, description, category, image, rating } = props.data;
   const navigate = useRouter();
 
-  const onClickProductCard = (event) => {
-    event.preventDefault();
-    navigate.push(`/product/${id}`);
-  };
+    const onClickProductCard = (event) => {
+      event.preventDefault();
+      navigate.push(`/product/${id}`);
+    };
   return (
     <div
       className="product-card basis-1/4 p-3 cursor-pointer"

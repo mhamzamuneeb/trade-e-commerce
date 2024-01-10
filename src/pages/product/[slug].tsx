@@ -40,122 +40,118 @@ export default function ProductDetail({}) {
     { text: "L", className: "w-0.5 mx-1.5" },
     { text: "XL", className: "w-0.5" },
   ];
+  const onClickHome = (event: any) => {
+    event.preventDefault();
+    router.back();
+  };
 
   return (
-    <div className=" flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
-      <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
-        <div className=" space-y-3 ">
-          {Array.from({ length: 4 }, (_, index) => (
-            <div className=" bg-gray-100 w-[120px] p-4" key={data?.id + index}>
-              <Image
-                key={`${data?.id}-${(index + 1).toString()}`}
-                src={data?.image}
-                className="h-auto m-auto w-full max-h-[80px] object-contain "
-                alt=""
-                width={100}
-                height={100}
-              />
-            </div>
-          ))}
-        </div>
-        <div className="bg-gray-100 w-full">
-          <Image
-            key={`${data?.id}-main`}
-            src={data?.image}
-            alt=""
-            width={100}
-            height={200}
-            className="h-full w-auto object-scale-down !m-auto "
-          />
-        </div>
-      </div>
-      <div className=" lg:w-2/6  md:w-3/6 max-md:w-full  space-y-2">
-        <h5>{data?.title}</h5>
-        <ProductRating rating={data?.rating} />
-        <div className=" font-semibold text-lg">${data?.price}</div>
-        <p className=" text-base">{data?.description}</p>
-
-        <div className="mt-6">
-          Colors{" "}
-          <Radio.Group
-            onChange={onChange}
-            value={value}
-            className="primary ant-radio-button-wrapper-checked"
+    <>
+      <>
+        <span className="items-stretch flex justify-between gap-2 mt-4">
+          <div
+            onClick={onClickHome}
+            className=" text-sm leading-5 whitespace-nowrap cursor-pointer text-gray-500"
           >
-            <Radio value={1}>A</Radio>
-            <Radio value={2}>B</Radio>
-          </Radio.Group>
-        </div>
-
-        <div className="my-4">
-          Sizes{" "}
-          {customButtons.map((button, index) => (
-            <CustomButton
-              key={index}
-              btnType={activeSize === button.text ? "primary" : "defaults"}
-              className={button.className}
-              btnText={button.text}
-              handleSubmit={() => handleSizeClick(button.text)}
+            Home /
+          </div>
+          <div className=" text-sm leading-5 text-gray-500">
+            {data?.category} /
+          </div>
+          <div className="text-black text-sm leading-5 grow ">
+            {data?.title}
+          </div>
+        </span>
+      </>
+      <div className=" flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
+        <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
+          <div className=" space-y-3 ">
+            {data &&
+              Array.from({ length: 4 }, (_, index) => (
+                <div
+                  className=" bg-gray-100 w-[120px] p-4"
+                  key={data?.id + index}
+                >
+                  <Image
+                    key={`${data?.id}-${(index + 1).toString()}`}
+                    src={data?.image}
+                    className="h-auto m-auto w-full max-h-[80px] object-contain "
+                    alt=""
+                    width={100}
+                    height={100}
+                  />
+                </div>
+              ))}
+          </div>
+          <div className="bg-gray-100 w-full">
+            <Image
+              key={`${data?.id}-main`}
+              src={data?.image}
+              alt=""
+              width={100}
+              height={200}
+              className="h-full w-auto object-scale-down !m-auto "
             />
-          ))}
-          {/* <CustomButton
-            btnType="primary"
-            className="w-0.5"
-            btnText="XS"
-            handleSubmit={undefined}
-          />
-          <CustomButton
-            btnType="primary"
-            className="w-0.5 mx-1.5"
-            btnText="S"
-            handleSubmit={undefined}
-          />
-          <CustomButton
-            btnType="primary"
-            className="w-0.5"
-            btnText="M"
-            handleSubmit={undefined}
-          />
-          <CustomButton
-            btnType="primary"
-            className="w-0.5 mx-1.5"
-            btnText="L"
-            handleSubmit={undefined}
-          />
-          <CustomButton
-            btnType="primary"
-            className="w-0.5"
-            btnText="Xl"
-            handleSubmit={undefined}
-          /> */}
+          </div>
         </div>
+        <div className=" lg:w-2/6  md:w-3/6 max-md:w-full  space-y-2">
+          <h5>{data?.title}</h5>
+          <ProductRating rating={data?.rating} />
+          <div className=" font-semibold text-lg">${data?.price}</div>
+          <p className=" text-base">{data?.description}</p>
 
-        <div>
-          {" "}
-          <Space.Compact>
+          <div className="mt-6">
+            Colors{" "}
+            <Radio.Group
+              onChange={onChange}
+              value={value}
+              className="primary ant-radio-button-wrapper-checked"
+            >
+              <Radio value={1}>A</Radio>
+              <Radio value={2}>B</Radio>
+            </Radio.Group>
+          </div>
+
+          <div className="my-4">
+            Sizes{" "}
+            {customButtons.map((button, index) => (
+              <CustomButton
+                key={index}
+                btnType={activeSize === button.text ? "primary" : "defaults"}
+                className={button.className}
+                btnText={button.text}
+                handleSubmit={() => handleSizeClick(button.text)}
+              />
+            ))}
+          </div>
+
+          <div>
+            {" "}
+            <Space.Compact>
+              <CustomButton
+                btnType="primary"
+                btnText="+"
+                handleSubmit={undefined}
+                className="w-2"
+              />
+              <Input defaultValue="2" rootClassName="!w-16 text-center" />
+              <CustomButton
+                btnType="primary"
+                btnText="-"
+                handleSubmit={undefined}
+                className="w-2 "
+              />
+            </Space.Compact>
             <CustomButton
               btnType="primary"
-              btnText="+"
+              btnText="Buy Now"
               handleSubmit={undefined}
-              className="w-2"
+              className="w-3 mx-4"
             />
-            <Input defaultValue="2" rootClassName="!w-16 text-center" />
-            <CustomButton
-              btnType="primary"
-              btnText="-"
-              handleSubmit={undefined}
-              className="w-2 "
-            />
-          </Space.Compact>
-          <CustomButton
-            btnType="primary"
-            btnText="Buy Now"
-            handleSubmit={undefined}
-            className="w-3 mx-4"
-          />
-          <Button className="" type="default" icon={<HeartOutlined />} />
+            <Button className="" type="default" icon={<HeartOutlined />} />
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
