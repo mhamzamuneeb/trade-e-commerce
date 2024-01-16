@@ -27,6 +27,10 @@ const ProductCard = (props) => {
     event.preventDefault();
     navigate.push(`/product/${id}`);
   };
+  const addToCart = (event) => {
+    event?.stopPropagation();
+    console.log(id, "id");
+  };
   return (
     <div
       className="product-card basis-1/4 p-3 cursor-pointer"
@@ -48,7 +52,10 @@ const ProductCard = (props) => {
             priority
           />
         </div>
-        <button className="p-2 transition-transform	 atc-btn translate-y-full bg-black text-white w-full">
+        <button
+          onClick={addToCart}
+          className="p-2 transition-transform	 atc-btn translate-y-full bg-black text-white w-full"
+        >
           Add to Cart
         </button>
       </div>
