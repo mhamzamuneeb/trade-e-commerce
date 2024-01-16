@@ -6,6 +6,7 @@ import {
 } from "@ant-design/icons";
 import React, { useEffect, useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
+import { useRouter } from "next/router";
 
 const HeaderComponent = () => {
   const [cartCount, setCartCount] = useState();
@@ -29,6 +30,13 @@ const HeaderComponent = () => {
   const menuStyle = {
     color: "black",
     selectedTextColor: "orange!important", // Set the text color to black
+  };
+  const navigate = useRouter();
+
+  const goToCart = (event: any) => {
+    event.preventDefault();
+
+    navigate.push(`/cart`);
   };
 
   const menu = (
@@ -100,6 +108,7 @@ const HeaderComponent = () => {
         />
         <Button className=" my-4" icon={<HeartOutlined />} />
         <Button
+          onClick={goToCart}
           className="fa fa-shopping-cart  my-4"
           icon={<ShoppingOutlined />}
         />
