@@ -63,7 +63,7 @@ export default function ProductDetail({}) {
           </div>
         </span>
       </>
-      <div className=" flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
+      <div className="  flex md:gap-x-12  my-4 max-md:gap-y-8  max-md:flex-col">
         <div className=" lg:w-4/6 md:w-3/6  max-md:w-full     flex space-x-4">
           <div className=" space-y-3 ">
             {data &&
