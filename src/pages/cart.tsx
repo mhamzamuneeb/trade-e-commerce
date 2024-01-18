@@ -87,8 +87,24 @@ function CartDetail() {
     event.preventDefault();
     navigate.push(`/`);
   };
+  const onClickHome = (event: any) => {
+    event.preventDefault();
+    router.back();
+  };
+
   return (
     <div className="w-full px-5 max-md:max-w-full section page-width">
+      <div className="mb-12">
+        <span className="items-stretch flex justify-between gap-2 mt-4">
+          <div
+            onClick={onClickHome}
+            className=" text-sm leading-5 whitespace-nowrap cursor-pointer text-gray-500"
+          >
+            Home /
+          </div>
+          <div className="text-black text-sm leading-5 grow ">Cart</div>
+        </span>
+      </div>
       <div className={`cart-header-row flex items-center	`}>
         <span className="cart-product-title">Product</span>
         <span className="cart-product-price">Price</span>
