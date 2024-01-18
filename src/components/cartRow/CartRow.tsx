@@ -22,6 +22,7 @@ export const CartRow = ({ data, changeQty }: any) => {
           <InputNumber
             min={1}
             max={20}
+            controls={true}
             defaultValue={data?.quantity}
             onChange={(val) => changeQty(data?.id, val)}
           />
