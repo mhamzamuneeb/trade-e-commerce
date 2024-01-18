@@ -35,12 +35,12 @@ export default function Footer() {
           <address className="not-italic mb-2">
             111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.
           </address>
-          <a href="mailto:exclusive@gmail.com" className="mb-2">
+          <Link href="mailto:exclusive@gmail.com" className="mb-2">
             exclusive@gmail.com
-          </a>
-          <a href="tel:+8801588889999" className="mb-2">
+          </Link>
+          <Link href="tel:+8801588889999" className="mb-2">
             +88015-8888-9999
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col mt-0">
           <span className="font-bold text-lg mb-2 mt-0">Account</span>
