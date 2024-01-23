@@ -9,7 +9,6 @@ import React, { useEffect, useState } from "react";
 import { MenuOutlined } from "@ant-design/icons";
 import Link from "next/link";
 import signupScreen from "@/pages/signup";
-import { useRouter } from "next/router";
 import { IconProfile } from "@/assets/icons/icons";
 import {
   getToken,
@@ -19,6 +18,8 @@ import {
 import { useAuth } from "@/pages/api/contextApi/authContext";
 import { DropdownLoggedOut } from "@/components/dropDown/logoutDropdown";
 import { toast } from "react-toastify";
+import { useRouter } from "next/router";
+
 const HeaderComponent = () => {
   const token = useAuth().getToken();
   const [dropDown, setdropDown] = useState(false);
@@ -54,6 +55,13 @@ const HeaderComponent = () => {
     selectedTextColor: "orange!important", // Set the text color to black
   };
   const router = useRouter();
+  const navigate = useRouter();
+
+  const goToCart = (event: any) => {
+    event.preventDefault();
+
+    navigate.push(`/cart`);
+  };
 
   const menu = (
     <Menu mode="horizontal" defaultSelectedKeys={["1"]} style={menuStyle}>
@@ -109,6 +117,7 @@ const HeaderComponent = () => {
         />
         <Button className=" my-4" icon={<HeartOutlined />} />
         <Button
+          onClick={goToCart}
           className="fa fa-shopping-cart  my-4"
           icon={<ShoppingOutlined />}
         />

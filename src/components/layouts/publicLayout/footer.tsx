@@ -8,6 +8,7 @@ import {
   TwitterIcon,
 } from "@/assets/icons/icons";
 import Image from "next/image";
+import Link from "next/link";
 // import { MessageTextIcon } from "@/assets/icons/icons";
 
 export default function Footer() {
@@ -34,17 +35,33 @@ export default function Footer() {
           <address className="not-italic mb-2">
             111 Bijoy Sarani, Dhaka, DH 1515, Bangladesh.
           </address>
-          <a href="mailto:exclusive@gmail.com" className="mb-2">
+          <Link href="mailto:exclusive@gmail.com" className="mb-2">
             exclusive@gmail.com
-          </a>
-          <a href="tel:+8801588889999" className="mb-2">
+          </Link>
+          <Link href="tel:+8801588889999" className="mb-2">
             +88015-8888-9999
-          </a>
+          </Link>
         </div>
-
         <div className="flex flex-col mt-0">
           <span className="font-bold text-lg mb-2 mt-0">Account</span>
-          <a href="/my-account" className="mb-2">
+          <ul>
+            <li className="mb-2">
+              <Link href="/">Home</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/my-account"> My Account</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/cart">Cart</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/wishlist">Wishlist</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/shop">Shop</Link>
+            </li>
+          </ul>
+          {/* <a href="/my-account" className="mb-2">
             My Account
           </a>
           <a href="/login" className="mb-2">
@@ -58,12 +75,26 @@ export default function Footer() {
           </a>
           <a href="/shop" className="mb-2">
             Shop
-          </a>
+          </a> */}
         </div>
 
         <div className="flex flex-col mt-0">
           <span className="font-bold text-lg mb-2 mt-0">Quick Link</span>
-          <a href="/privacy-policy" className="mb-2">
+          <ul>
+            <li className="mb-2">
+              <Link href="/privacy-policy">Privacy Policy</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/terms-of-use">Terms Of Use</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/faq">FAQ</Link>
+            </li>
+            <li className="mb-2">
+              <Link href="/contact">Contact</Link>
+            </li>
+          </ul>
+          {/* <a href="/privacy-policy" className="mb-2">
             Privacy Policy
           </a>
           <a href="/terms-of-use" className="mb-2">
@@ -74,7 +105,7 @@ export default function Footer() {
           </a>
           <a href="/contact" className="mb-2">
             Contact
-          </a>
+          </a> */}
         </div>
 
         <div className="flex flex-col mt-0">

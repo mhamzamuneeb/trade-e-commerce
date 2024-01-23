@@ -19,13 +19,18 @@ import ProductRating from "../ProductRating";
 //   };
 // }
 const ProductCard = (props) => {
-  const { id, title, price, description, category, image, rating } = props.data;
+  const { id, title, price, description, category, image, rating } =
+    props?.data;
   const navigate = useRouter();
 
-    const onClickProductCard = (event) => {
-      event.preventDefault();
-      navigate.push(`/product/${id}`);
-    };
+  const onClickProductCard = (event) => {
+    event.preventDefault();
+    navigate.push(`/product/${id}`);
+  };
+  const addToCart = (event) => {
+    event?.stopPropagation();
+    console.log(id, "id");
+  };
   return (
     <div
       className="product-card basis-1/4 p-3 cursor-pointer"
@@ -47,7 +52,10 @@ const ProductCard = (props) => {
             priority
           />
         </div>
-        <button className="p-2 transition-transform	 atc-btn translate-y-full bg-black text-white w-full">
+        <button
+          onClick={addToCart}
+          className="p-2 transition-transform	 atc-btn translate-y-full bg-black text-white w-full"
+        >
           Add to Cart
         </button>
       </div>
@@ -64,7 +72,7 @@ const ProductCard = (props) => {
         <div className="flex items-center">
           <ProductRating rating={rating} />
 
-          <span className="text-color-fade ml-2">({rating.count})</span>
+          <span className="text-color-fade ml-2">({rating?.count})</span>
         </div>
       </div>
     </div>
