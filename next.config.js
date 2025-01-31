@@ -18,6 +18,7 @@ const nextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
+  output: "standalone",
   // distDir: "build",
 };
 
